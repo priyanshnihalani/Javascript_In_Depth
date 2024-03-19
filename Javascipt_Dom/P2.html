@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+
+<body>
+    <h1 id="title" class="heading">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit debitis voluptatum totam laborum nesciunt
+        beatae ea eius perferendis! Harum, sequi?</h1>
+    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit debitis voluptatum totam laborum nesciunt
+        beatae ea eius perferendis! Harum, sequi?</h1>
+    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit debitis voluptatum totam laborum nesciunt
+        beatae ea eius perferendis! Harum, sequi?</h1>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list">one</li>
+            <li class="list">two</li>
+            <li class="list">three</li>
+        </ul>
+
+</body>
+<script>
+    const select = document.querySelector("h1");  //Select the first h1 element in the body
+    console.log(select);     
+    const selectId = document.querySelector("#title")
+    console.log(selectId)
+    const selectClass = document.querySelector(".heading")
+    console.log(selectClass)      
+    const selectInput = document.querySelector("input[type='password']")
+    console.log(selectInput)
+
+    const selectul = document.querySelector("ul");   //Select the ul element by tag name
+    const selectLi = selectul.querySelector("li").style.color = "red";     //Select a specific li by its index and change color to red
+    console.log(selectLi)
+
+    const selectall = document.querySelectorAll("li");
+    selectall[1].style.color = "blue"
+
+    selectall.forEach((li) => li.style.background="orange")
+
+    let list = document.getElementsByClassName("list")
+    console.log(list)
+
+    let newarr = Array.from(list)
+    newarr.forEach(item=>console.log(item.textContent))
+
+</script>
+
+</html>

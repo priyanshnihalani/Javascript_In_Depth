@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .main{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: #f5d39e;
+            border: 3px solid black;
+            margin-right: 20px;
+        }
+        .two{
+            width: 100px;
+            height: 100px;
+            background-color: #dfdfdf;
+            border: 3px solid black;
+            margin-right: 20px;
+
+        }
+        .three{
+            width: 100px;
+            height: 100px;
+            background-color: #fddf;
+            border: 3px solid black;
+            margin-right: 20px;
+
+        }
+        .four{
+            width: 100px;
+            height: 100px;
+            background-color: #dfdf;
+            border: 3px solid black;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Color Scheme Switcher</h1>
+        <div class="main">    
+            <div class="one" id="switch"></div>
+            <div class="two" id="switch"></div>
+            <div class="three" id="switch"></div>
+            <div class="four" id="switch"></div>
+        </div>
+        <h2>Try on one of the color above to change the background color of page</h2>
+    </div>
+    <script>
+        let switcher = document.querySelectorAll("#switch");
+        let body = document.querySelector("body");
+
+        switcher.forEach(function (button) {
+                button.addEventListener('click', function(e){
+                    if (e.target.className === "one") {
+                        body.style.backgroundColor = "#f5d39e"
+                    }
+                    if (e.target.className === "two") {
+                        body.style.backgroundColor = "#dfdfdf"
+                    }
+                    if (e.target.className === "three") {
+                        body.style.backgroundColor = "#fddf"
+                    }
+                    if (e.target.className === "four") {
+                        body.style.backgroundColor = "#dfdf"
+                    }
+                })
+            }
+        );
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<style>
+   
+
+   .container{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .main{
+            font-size: xx-large;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #hour{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #f5d39e;
+            border: 3px solid black;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        #ampm{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self:flex-end;
+            width: 100px;
+            height: 100px;
+            background-color: #dfdfdf;
+            border: 3px solid black;
+            margin-right: 20px;
+            cursor: pointer;
+
+        }
+        #minute{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #fddf;
+            border: 3px solid black;
+            margin-right: 20px;
+            cursor: pointer;
+
+        }
+        #second{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: #dfdf;
+            border: 3px solid black;
+            margin-right: 20px;
+            cursor: pointer;
+
+        }
+</style>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <span id="hour" style=" color: white; padding: 20px; font-size: 50px; color: rgb(78, 74, 74);"></span>
+            <span id="ampm" style=" color: white; padding: 10px; width: 50px; height: 50px;"></span> : &nbsp;
+            <span id="minute" style=" color: white; padding: 20px; font-size: 50px; color: rgb(78, 74, 74);"></span> : &nbsp;
+            <span id="second" style=" color: white; padding: 20px; font-size: 50px; color: rgb(78, 74, 74); padding-top: 10px;"></span>
+        </div>
+        <p style="margin-top: 50px; font-size: large;">"I have created a digital clock using JavaScript; with every tick, it not only displays time but also the beauty of coding in real-time."</p>
+    </div>
+</body>
+
+
+<script>
+    setInterval(function () {
+        let time = new Date();
+        let hour = time.getHours()
+        console.log(hour)
+        document.querySelector("span:nth-child(1)").innerHTML = hour ;
+        if (hour >= 12) {
+            document.querySelector("span:nth-child(2)").innerHTML = "PM";
+        }
+    }, 1000);
+    setInterval(function () {
+        let time = new Date();
+        let minute = time.getMinutes()
+        document.querySelector("span:nth-child(3)").innerHTML = minute
+    }, 1000);
+
+    setInterval(function () {
+        let time = new Date();
+        let second = time.getSeconds()
+        document.querySelector("span:nth-child(4)").innerHTML = second;
+    }, 1000); // Update second every second (1000 milliseconds)
+</script>
+
+</html>

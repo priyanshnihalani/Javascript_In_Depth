@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Index</title>
+</head>
+
+<body>
+    <form>
+        Enter Height in Centimeters: <input type="text" id="height"><br>
+        Enter Weight in Kg: <input type="text" id="weight"><br>
+        Value: <p></p>
+        <button type="submit" id="calculate">Calculate</button><br>
+    </form>
+    <script>
+        // This use case give you an empty value.
+        // let height = parseFloat(document.getElementById("height").value)
+        // let weight = parseFloat(document.getElementById("weight").value)
+        let form = document.querySelector("form")
+        form.addEventListener('click', function (e) {
+            let height = parseFloat(document.getElementById("height").value)
+            let weight = parseFloat(document.getElementById("weight").value)
+            let result = document.querySelector("p")
+            e.preventDefault()
+            if (isNaN(height) || isNaN(weight) || height === "" || weight === "") { } else {
+                height = height / 100;
+                let sqauareofheight = height * height;
+                let BMI = weight / sqauareofheight;
+                if (BMI <= 18.5) {
+                    result.innerHTML = "Your BMI index is " + BMI.toFixed(2) + ". You are underweight.";
+                    result.style.color = 'red';
+                } else if (BMI > 18.5 && BMI <= 24.9) {
+                    result.innerHTML = "Your BMI index is " + BMI.toFixed(2) + ". You have a normal weight.";
+                    result.style.color = 'green';
+                } else if (BMI > 24.9 && BMI <= 29.9) {
+                    result.innerHTML = "Your BMI index is " + BMI.toFixed(2) + ". You are overweight.";
+                    result.style.color = 'yellow'
+                } else {
+                    result.innerHTML = "Your BMI indes is " + BMI.toFixed(2) + ". You are obsesed.";
+                    result.style.color = 'red';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

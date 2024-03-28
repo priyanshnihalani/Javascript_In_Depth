@@ -1,0 +1,18 @@
+<html>
+
+<head>
+  <title>Asynchronous Programming</title>
+</head>
+
+<body>
+  <h1>Asynchrounous Programming</h1>
+  <button id="stop">Stop</button>
+</body>
+<script>
+  const changeText = () => document.querySelector("h1").innerHTML = "Best Javascript Series of async javascript"
+  
+  const changeagain = setTimeout(changeText, 2000);
+  document.querySelector("#stop").addEventListener("click", () => clearTimeout(changeagain));
+</script>
+
+</html>

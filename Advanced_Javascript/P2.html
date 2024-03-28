@@ -1,0 +1,23 @@
+<html>
+
+<head>
+  <title>Asynchronous Programming</title>
+</head>
+
+<body>
+  <h1>Asynchrounous Programming 2</h1>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+</body>
+<script>
+  let interval
+ document.querySelector("#start").addEventListener("click", () => 
+   interval = setInterval(() => {
+     console.log("Hello")
+   }, 1000))
+
+  document.querySelector("#stop").addEventListener("click", () => 
+    clearInterval(interval))
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>Random Background Color</title>
+</head>
+
+<body>
+  <h1>Random Background Color</h1>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <script>
+    function randomColor() {
+      const hexstring = "0123456789ABCDEF";
+      let hash = "#";
+      for (let i = 1; i <= 6; i++) {
+        hash += hexstring[Math.round(Math.random() * 15)];
+      }
+      return hash;
+    }
+    function changeBgColor() {
+      document.body.style.backgroundColor = randomColor()
+    }
+    let interval;
+    document.querySelector("#start").addEventListener("click", function () {
+      interval = setInterval(changeBgColor, 1000);
+    })
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(interval);
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>KeyValue_KeyCode</title>
+</head>
+
+<body>
+  <table border=1>
+    <tr>
+      <th>key</th>
+      <th>key code</th>
+    </tr>
+    <tr>
+      <td id="key"></td>
+      <td id="keycode"></td>
+    </tr>
+  </table>
+  <script>
+    document.onkeydown = function (e) {
+      document.getElementById("key").innerHTML = e.key;
+      document.getElementById("keycode").innerHTML = e.keyCode;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Resolve Promise</button>
+    <button>Reject Promise</button>
+    <script type="module">
+        let resbutton = document.querySelector("button:nth-child(1)")
+        let rejbutton = document.querySelector("button:nth-child(2)")
+
+        const mypromise = new Promise((resolve, reject) => {
+            resbutton.addEventListener('click', () => {
+                resolve()
+            })
+            rejbutton.addEventListener("click", () => {
+                reject()
+            })
+        }
+        ).then(() => {
+            console.log("Promise Resolved")
+        }).catch(() => {
+            console.log("Promise Rejected")
+        })
+
+        async function one() {
+            return "All is Correct"
+            // return "Priyansh"
+        }
+
+        const res = await one();
+        console.log(res)
+        console.log(mypromise)
+    </script>
+</body>
+
+</html>
